@@ -2,21 +2,23 @@
   <div class="container">
     <header class="jumbotron">
       <h3>
-        <strong>{{currentUser.name}}</strong> Profile
+        <strong>{{ currentUser.user.name }}</strong> Profile
       </h3>
     </header>
-    <p>
+    <div class="col-md-12">
+    <p class="card">
       <strong>Token: </strong>
-      {{currentUser.accessToken}}
+      {{ currentUser.access_token }}
     </p>
     <p>
       <strong>Id: </strong>
-      {{currentUser.id}}
+      {{ currentUser.user.id }}
     </p>
     <p>
       <strong>Email: </strong>
-      {{currentUser.email}}
+      {{ currentUser.user.email }}
     </p>
+    </div>
   </div>
 </template>
 
