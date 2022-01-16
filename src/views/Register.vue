@@ -111,7 +111,7 @@ name: 'Register',
       this.submitted = true;
       this.$validator.validate().then(isValid => {
         if(isValid) {
-          this.$store.dispatch('register', this.user).then(
+          this.$store.dispatch('auth/register', this.user).then(
             data => {
               this.message = data.message;
               this.successful = true;

@@ -10,17 +10,17 @@
       />
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="email">Email</label>
           <input
-            id="name"
-            v-model="user.name"
+            id="email"
+            v-model="user.email"
             v-validate="required"
             type="text"
             class="form-control"
-            name="name"
+            name="email"
           >
-          <div v-if="errors.has('name')" class="alert alert-danger" role="alert">
-            Name is Required!
+          <div v-if="errors.has('email')" class="alert alert-danger" role="alert">
+            Email is Required!
           </div>
         </div>
         <div class="form-group">
@@ -82,8 +82,8 @@ export default {
           return;
         }
 
-        if (this.user.name && this.user.password) {
-          this.$store.dispatch('login', this.user).then(
+        if (this.user.email && this.user.password) {
+          this.$store.dispatch('auth/login', this.user).then(
             () => {
               this.$router.push('/profile');
             },
